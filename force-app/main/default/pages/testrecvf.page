@@ -1,0 +1,49 @@
+<apex:page controller="searchrecords" showHeader="false" sidebar="false" docType="html-5.0">
+    <style>
+        h1{
+        font-size:1.5em
+       }
+    </style>
+    <apex:image url="{!$Resource.cloudImage}" width="50" height="50"/>
+    <apex:sectionHeader title="Weatherinfo" subtitle="weather"/>
+    <apex:pageMessages ></apex:pageMessages>
+    
+    <apex:form >
+        <apex:pageblock >
+            
+            <apex:outputLabel ><h1>City&nbsp;:&nbsp;&nbsp;</h1> </apex:outputLabel>
+            <apex:inputText value="{!city}"/>&nbsp;&nbsp;
+            <apex:outputLabel ><h1>Country&nbsp;:&nbsp;&nbsp;</h1> </apex:outputLabel>
+            <apex:inputText value="{!country}"/>&nbsp;&nbsp;
+            <h1>FromDate:</h1> <apex:input type="date" value="{!fromdate}"/>&nbsp;&nbsp;
+            <h1>ToDate:</h1> <apex:input type="date" value="{!todate}"/>&nbsp;&nbsp;
+            <apex:commandButton value="show" action="{!showList}" />&nbsp;&nbsp;
+            <apex:commandButton value="Clear" action="{!clearRecords}"/>
+        </apex:pageblock>
+        <apex:pageBlock rendered="{!!ISNULL(acc)}">
+            
+            <apex:pageBlockTable value="{!acc}"  var="a1">
+                
+                <apex:column headerValue="Account Name" >
+                    <apex:commandLink value="{!a1.Name}" action="{!searchRecords}" >
+                        <apex:param value="{!a1.id}" name="recordid" assignTo="{!recordid}">
+                        </apex:param>
+                    </apex:commandLink>
+                </apex:column>
+                
+                <apex:column headerValue="Location" >
+                    <apex:commandLink value="{!a1.City__c}" action="{!searchRecords}" >
+                        <apex:param value="{!a1.id}" name="recordid" assignTo="{!recordid}"/>
+                    </apex:commandLink>
+                </apex:column>
+                
+                <apex:column headerValue="Date" >
+                    <apex:commandLink value="{!a1.Date__c}" action="{!searchRecords}">
+                        <apex:param value="{!a1.id}" name="recordid" assignTo="{!recordid}"/>
+                    </apex:commandLink>
+                </apex:column>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

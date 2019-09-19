@@ -1,0 +1,50 @@
+<apex:page controller="customWeather"  docType="html-5.0" showHeader="false" sidebar="false" >
+    
+    <apex:form >
+     
+        <h1>
+            <center>Weather Report</center>
+        </h1>
+        <style>
+           body{
+            background-image: url("{!$Resource.weather3}");
+            }
+            p{
+            font-family:"Arial Unicode MS";
+            font-size:30pt;
+            }
+            h1{
+            color:black;
+            text-align:center;
+            font-size:30pt;
+            
+            }
+            .aa{
+            sstext-align:center;
+            float:right;
+            padding-left:80px;
+            }
+        
+        </style>
+       
+        <Apex:pageBlock title="Weather Location Criteria">
+            <apex:outputlabel ><b>City&nbsp;&nbsp;:&nbsp;&nbsp;</b></apex:outputlabel>
+            <apex:inputtext value="{!city}"/>&nbsp;&nbsp;
+            <b>Date&nbsp;&nbsp;:&nbsp;&nbsp;</b><apex:input type="date" value="{!datee}"/>
+            &nbsp;&nbsp;<b><apex:commandButton value="Go" action="{!go}" /></b>
+        </Apex:pageBlock>
+        <apex:pageBlock title="{!city} Weather" rendered="{!flag}">
+            <apex:pageMessages />
+            <apex:pageBlockSection >
+                
+                <apex:outputText label="Date" value="{!Date1}"/>
+                <apex:outputText label="Temperature" value="{!temp}"/>
+                <apex:outputText label="Pressure" value="{!pressure}"/>
+                <apex:outputText label="Humidity" value="{!humidity}"/>
+                <apex:outputText label="Minimum Temperature" value="{!temp_min}"/>
+                <apex:outputText label="Maximum Temperature" value="{!temp_max}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

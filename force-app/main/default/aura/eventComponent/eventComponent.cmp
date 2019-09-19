@@ -1,0 +1,6 @@
+<aura:component >
+	<lightning:empApi>
+        import { subscribe, unsubscribe, onError, setDebugFlag, isEmpEnabled } 
+    from 'lightning/empApi';
+    </lightning:empApi>
+</aura:component>

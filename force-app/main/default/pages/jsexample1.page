@@ -1,0 +1,8 @@
+<apex:page >
+    <script>
+    <p id='demo'> change html content </p>
+    
+    
+    
+    </script>
+</apex:page>

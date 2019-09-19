@@ -1,0 +1,10 @@
+<apex:page StandardController="Weather_Live__c" tabStyle="Weather_Live__c">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+ <apex:inputField label="country" value="{!Weather_Live__c.country__c}"/>
+ <apex:inputField label="city" value="{!Weather_Live__c.city__c}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+ </apex:form>
+</apex:page>

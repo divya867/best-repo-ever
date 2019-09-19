@@ -1,0 +1,4 @@
+<apex:page standardcontroller="account" extensions="myaccweaapex">
+    
+    
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page standardController="Weather_ledger_book__c" showHeader="false" sidebar="false">
+    <apex:form >
+   
+           
+        <table>
+            <tr align="center">  <apex:image url="{!$Resource.cloudImage}" width="50" height="50"  />
+            </tr>
+            <tr>
+                <apex:sectionHeader title="Weather Report" subtitle="weather display station"/>
+                
+            </tr>
+        </table>
+ 
+    
+</apex:form>
+</apex:page>

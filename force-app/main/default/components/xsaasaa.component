@@ -1,0 +1,12 @@
+<apex:component >
+     <messaging:emailTemplate subject="New Product Added" recipientType="User" relatedToType="Product2">
+        <messaging:htmlEmailBody >
+            Hello {!recipient.Firstname},<br/><br/>
+            A new product is created.<br/>
+            Product Name: {!relatedTo.name}<br/>
+            Product Code: {!relatedTo.productCode}<br/>
+            Product Active: {!relatedTo.IsActive}<br/>
+            Thank You,
+        </messaging:htmlEmailBody>
+    </messaging:emailTemplate>
+</apex:component>
